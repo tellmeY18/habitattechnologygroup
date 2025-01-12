@@ -11,6 +11,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        yellow: "var(--yellow)",
+        textPrimary: "var(--text-primary)",
+        textSecondary: "var(--text-secondary)",
+        linkColor: "var(--link-color)",
+        linkHover: "var(--link-hover)",
+      },
+      height: {
+        hero: "var(--hero-height)",
       },
     },
   },

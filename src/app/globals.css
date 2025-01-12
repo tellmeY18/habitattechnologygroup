@@ -3,28 +3,30 @@
 @tailwind utilities;
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
-    --yellow: #fbbf24;
-    --hero-height: 600px; /* Adjusted hero height */
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+    --background: #1a1a2e;
+    --foreground: #e94560;
+    --yellow: #0f3460;
+    --text-primary: #e94560;
+    --text-secondary: #16213e;
+    --link-color: #16213e;
+    --link-hover: #e94560;
+    --hero-height: 600px;
 }
 
 body {
     color: var(--foreground);
     background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 @layer components {
     .hero-wrapper {
-        @apply relative w-full h-[var(--hero-height)] bg-white dark:bg-gray-900 overflow-hidden flex items-center justify-center;
+        @apply relative w-full h-[var(--hero-height)] bg-[var(--background)] dark:bg-gray-900 overflow-hidden flex items-center justify-center;
     }
 
     .hero-container {
@@ -149,5 +151,249 @@ body {
 
     .snippets-grid {
         @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+    }
+
+    .site-header {
+        @apply bg-[var(--background)] shadow-md;
+    }
+
+    .sticky-wrapper {
+        @apply sticky top-0 z-50;
+    }
+
+    .sticky-header {
+        @apply bg-[var(--background)] dark:bg-gray-900;
+    }
+
+    .main-bar {
+        @apply flex items-center justify-between py-4;
+    }
+
+    .logo-header {
+        @apply flex items-center;
+    }
+
+    .logo_slogan {
+        @apply text-sm text-[var(--text-secondary)] ml-4;
+    }
+
+    .extra-nav {
+        @apply flex items-center;
+    }
+
+    .extra-cell {
+        @apply flex items-center;
+    }
+
+    .vnav-btn {
+        @apply text-[var(--text-primary)] dark:text-gray-300;
+    }
+
+    .header-top-info {
+        @apply hidden md:flex;
+    }
+
+    .top-bar {
+        @apply flex items-center;
+    }
+
+    .social-bx {
+        @apply flex items-center;
+    }
+
+    .social-bx li {
+        @apply ml-4;
+    }
+
+    .e-p-bx {
+        @apply flex items-center;
+    }
+
+    .e-p-bx li {
+        @apply ml-4;
+    }
+
+    .nav-sidebar {
+        @apply fixed top-0 right-0 w-64 h-full bg-[var(--background)] dark:bg-gray-900 shadow-lg transition-transform duration-300;
+    }
+
+    .nav-sidebar.open {
+        @apply transform translate-x-0;
+    }
+
+    .nav-sidebar {
+        @apply transform translate-x-full;
+    }
+
+    .vnav-close {
+        @apply absolute top-4 right-4 text-gray-700 dark:text-gray-300;
+    }
+
+    .vertical-content-wrap {
+        @apply flex flex-col h-full;
+    }
+
+    .vertical-content-area {
+        @apply flex flex-col justify-center items-center;
+    }
+
+    .vertical-nav {
+        @apply w-full;
+    }
+
+    .vertical-nav ul {
+        @apply flex flex-col;
+    }
+
+    .vertical-nav li {
+        @apply mb-4;
+    }
+
+    .vertical-nav li a {
+        @apply text-[var(--text-secondary)] dark:text-gray-300 hover:text-[var(--link-hover)] dark:hover:text-white transition-colors;
+    }
+
+    .vertical-nav li.active a {
+        @apply font-bold;
+    }
+
+    .vertical-nav .has-child {
+        @apply relative;
+    }
+
+    .vertical-nav .has-child .submenu-toogle {
+        @apply absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-700 dark:text-gray-300;
+    }
+
+    .vertical-nav .sub-menu {
+        @apply hidden;
+    }
+
+    .vertical-nav .has-child:hover .sub-menu {
+        @apply block;
+    }
+
+    .modal {
+        @apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center;
+    }
+
+    .modal-content {
+        @apply bg-[var(--background)] dark:bg-gray-800 p-8 rounded-lg shadow-lg;
+    }
+
+    .modal .close {
+        @apply absolute top-4 right-4 text-gray-700 dark:text-gray-300 cursor-pointer;
+    }
+}
+
+.site-header {
+    @apply w-full bg-[#0f3460] dark:bg-gray-900;
+}
+
+.top-bar-wrapper {
+    @apply hidden md:block bg-[#1a1a2e] dark:bg-gray-800 py-2;
+}
+
+.top-bar {
+    @apply flex justify-between items-center;
+}
+
+.contact-info {
+    @apply flex gap-6;
+}
+
+.contact-link {
+    @apply flex items-center gap-2 text-sm text-[#16213e] dark:text-gray-300 hover:text-[#e94560] dark:hover:text-white transition-colors;
+}
+
+.social-links {
+    @apply flex gap-4;
+}
+
+social-link {
+    @apply text-[#16213e] dark:text-gray-300 hover:text-[#e94560] dark:hover:text-white transition-colors;
+}
+
+.main-nav-wrapper {
+    @apply bg-[#0f3460] dark:bg-gray-900 py-4 transition-all duration-300;
+}
+
+.main-nav-wrapper.sticky {
+    @apply fixed top-0 left-0 right-0 z-50 shadow-lg;
+    animation: slidedown 0.3s ease-out;
+}
+
+.main-nav {
+    @apply flex items-center justify-between;
+}
+
+.logo-wrapper {
+    @apply flex items-center gap-4;
+}
+
+.logo-link {
+    @apply flex items-center;
+}
+
+.logo-image {
+    @apply h-12 w-auto;
+}
+
+.logo-slogan {
+    @apply hidden lg:block text-sm text-gray-500 dark:text-gray-400;
+}
+
+.mobile-menu-button {
+    @apply md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors;
+}
+
+.nav-menu-wrapper {
+    @apply hidden md:block;
+}
+
+.nav-menu-wrapper.open {
+    @apply fixed md:relative top-0 right-0 bottom-0 left-0 bg-[#1a1a2e] dark:bg-gray-900 md:bg-transparent z-40 flex items-center justify-center md:flex;
+}
+
+.nav-menu {
+    @apply flex flex-col md:flex-row items-center gap-1 md:gap-2;
+}
+
+.nav-item {
+    @apply relative;
+}
+
+.nav-link {
+    @apply flex items-center gap-1 px-4 py-2 text-[#16213e] dark:text-gray-300 hover:text-[#e94560] dark:hover:text-white transition-colors text-sm font-medium;
+}
+
+.submenu-trigger {
+    @apply w-full flex items-center justify-between gap-1;
+}
+
+.has-submenu {
+    @apply relative;
+}
+
+.submenu {
+    @apply hidden absolute top-full left-0 min-w-[200px] bg-[#1a1a2e] dark:bg-gray-800 shadow-lg rounded-md py-2 z-50;
+}
+
+.submenu.open {
+    @apply block;
+}
+
+.submenu li a {
+    @apply block px-4 py-2 text-sm text-[#16213e] dark:text-gray-300 hover:bg-[#e0e0e0] dark:hover:bg-gray-700 transition-colors;
+}
+
+@keyframes slidedown {
+    from {
+        transform: translatey(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translatey(0);
+        opacity: 1;
     }
 }

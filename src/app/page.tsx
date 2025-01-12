@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "@/components/Hero";
 import Image from "next/image";
+import Navbar from "@/components/Nav";
 
 const slides = [
   {
@@ -40,6 +41,7 @@ const welcomeContent = {
 export default function Page() {
   return (
     <main className="pb-24">
+      <Navbar /> {/* Adding the Navbar */}
       <Hero slides={slides} autoPlayInterval={5000} />
       <div className="flex flex-col pt-20 container mx-auto px-4 max-w-6xl">
         <section id="welcome" className="welcome-section">
