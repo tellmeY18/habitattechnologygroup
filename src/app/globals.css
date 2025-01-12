@@ -3,14 +3,22 @@
 @tailwind utilities;
 
 :root {
-    --background: #1a1a2e;
-    --foreground: #e94560;
-    --yellow: #0f3460;
-    --text-primary: #e94560;
-    --text-secondary: #16213e;
-    --link-color: #16213e;
-    --link-hover: #e94560;
+    --background: #fff8e5;
+    --foreground: #333333;
+    --yellow: #d1b82a;
+    --text-primary: #333333;
+    --text-secondary: #00000;
+    --white: #ffffff;
+    --link-color: #1a73e8;
+    --link-hover: #d32f2f;
     --hero-height: 600px;
+    --header-bg: #0f3460;
+    --top-bar-bg: #fff8e5;
+    --contact-link-color: #16213e;
+    --contact-link-hover: #e94560;
+    --nav-menu-bg: #fff8e5;
+    --submenu-bg: #fff8e5;
+    --submenu-link-hover-bg: #e0e0e0;
 }
 
 body {
@@ -26,7 +34,7 @@ body {
 
 @layer components {
     .hero-wrapper {
-        @apply relative w-full h-[var(--hero-height)] bg-[var(--background)] dark:bg-gray-900 overflow-hidden flex items-center justify-center;
+        @apply relative w-full h-[var(--hero-height)] bg-[var(--background)] overflow-hidden flex items-center justify-center;
     }
 
     .hero-container {
@@ -42,7 +50,8 @@ body {
     }
 
     .hero-title {
-        @apply text-4xl md:text-5xl lg:text-6xl font-extrabold text-white uppercase leading-tight;
+        @apply text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-tight;
+        color: var(--text-primary);
     }
 
     .text-yellow {
@@ -50,9 +59,9 @@ body {
     }
 
     .hero-subtitle {
-        @apply text-white text-base leading-6 mt-4;
+        @apply text-lg leading-7 mt-4;
+        color: var(--white);
     }
-
     .hero-button-container {
         @apply mt-8;
     }
@@ -94,7 +103,8 @@ body {
     }
 
     .welcome-card {
-        @apply bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg;
+        @apply p-8 rounded-lg shadow-lg;
+        background: var(--background);
     }
 
     .welcome-content {
@@ -102,15 +112,18 @@ body {
     }
 
     .welcome-title {
-        @apply text-4xl font-bold text-gray-900 dark:text-gray-100;
+        @apply text-4xl font-bold;
+        color: var(--text-primary);
     }
 
     .welcome-subtitle {
-        @apply text-2xl text-gray-700 dark:text-gray-300 mt-4;
+        @apply text-2xl mt-4;
+        color: var(--text-secondary);
     }
 
     .welcome-description {
-        @apply text-lg text-gray-600 dark:text-gray-400 mt-4;
+        @apply text-lg mt-4;
+        color: var(--text-secondary);
     }
 
     .image-slideshow {
@@ -130,7 +143,8 @@ body {
     }
 
     .recent-projects-title {
-        @apply text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8;
+        @apply text-3xl font-bold mb-8;
+        color: var(--text-primary);
     }
 
     .recent-projects-grid {
@@ -146,7 +160,8 @@ body {
     }
 
     .snippets-title {
-        @apply text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8;
+        @apply text-3xl font-bold mb-8;
+        color: var(--text-primary);
     }
 
     .snippets-grid {
@@ -154,7 +169,8 @@ body {
     }
 
     .site-header {
-        @apply bg-[var(--background)] shadow-md;
+        @apply shadow-md;
+        background: var(--background);
     }
 
     .sticky-wrapper {
@@ -162,7 +178,8 @@ body {
     }
 
     .sticky-header {
-        @apply bg-[var(--background)] dark:bg-gray-900;
+        @apply;
+        background: var(--background);
     }
 
     .main-bar {
@@ -174,7 +191,8 @@ body {
     }
 
     .logo_slogan {
-        @apply text-sm text-[var(--text-secondary)] ml-4;
+        @apply text-sm ml-4;
+        color: var(--text-secondary);
     }
 
     .extra-nav {
@@ -186,11 +204,8 @@ body {
     }
 
     .vnav-btn {
-        @apply text-[var(--text-primary)] dark:text-gray-300;
-    }
-
-    .header-top-info {
-        @apply hidden md:flex;
+        @apply;
+        color: var(--text-primary);
     }
 
     .top-bar {
@@ -205,93 +220,22 @@ body {
         @apply ml-4;
     }
 
-    .e-p-bx {
-        @apply flex items-center;
-    }
-
-    .e-p-bx li {
-        @apply ml-4;
-    }
-
-    .nav-sidebar {
-        @apply fixed top-0 right-0 w-64 h-full bg-[var(--background)] dark:bg-gray-900 shadow-lg transition-transform duration-300;
-    }
-
-    .nav-sidebar.open {
-        @apply transform translate-x-0;
-    }
-
-    .nav-sidebar {
-        @apply transform translate-x-full;
-    }
-
-    .vnav-close {
-        @apply absolute top-4 right-4 text-gray-700 dark:text-gray-300;
-    }
-
-    .vertical-content-wrap {
-        @apply flex flex-col h-full;
-    }
-
-    .vertical-content-area {
-        @apply flex flex-col justify-center items-center;
-    }
-
-    .vertical-nav {
-        @apply w-full;
-    }
-
-    .vertical-nav ul {
-        @apply flex flex-col;
-    }
-
-    .vertical-nav li {
-        @apply mb-4;
-    }
-
-    .vertical-nav li a {
-        @apply text-[var(--text-secondary)] dark:text-gray-300 hover:text-[var(--link-hover)] dark:hover:text-white transition-colors;
-    }
-
-    .vertical-nav li.active a {
-        @apply font-bold;
-    }
-
-    .vertical-nav .has-child {
-        @apply relative;
-    }
-
-    .vertical-nav .has-child .submenu-toogle {
-        @apply absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-700 dark:text-gray-300;
-    }
-
-    .vertical-nav .sub-menu {
-        @apply hidden;
-    }
-
-    .vertical-nav .has-child:hover .sub-menu {
-        @apply block;
-    }
-
     .modal {
         @apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center;
     }
 
     .modal-content {
-        @apply bg-[var(--background)] dark:bg-gray-800 p-8 rounded-lg shadow-lg;
-    }
-
-    .modal .close {
-        @apply absolute top-4 right-4 text-gray-700 dark:text-gray-300 cursor-pointer;
+        @apply p-8 rounded-lg shadow-lg;
+        background: var(--background);
     }
 }
 
 .site-header {
-    @apply w-full bg-[#0f3460] dark:bg-gray-900;
+    @apply w-full bg-[var(--header-bg)];
 }
 
 .top-bar-wrapper {
-    @apply hidden md:block bg-[#1a1a2e] dark:bg-gray-800 py-2;
+    @apply hidden md:block bg-[var(--top-bar-bg)] py-2;
 }
 
 .top-bar {
@@ -303,7 +247,7 @@ body {
 }
 
 .contact-link {
-    @apply flex items-center gap-2 text-sm text-[#16213e] dark:text-gray-300 hover:text-[#e94560] dark:hover:text-white transition-colors;
+    @apply flex items-center gap-2 text-sm text-[var(--contact-link-color)] hover:text-[var(--contact-link-hover)] transition-colors;
 }
 
 .social-links {
@@ -311,11 +255,11 @@ body {
 }
 
 social-link {
-    @apply text-[#16213e] dark:text-gray-300 hover:text-[#e94560] dark:hover:text-white transition-colors;
+    @apply text-[var(--contact-link-color)] hover:text-[var(--contact-link-hover)] transition-colors;
 }
 
 .main-nav-wrapper {
-    @apply bg-[#0f3460] dark:bg-gray-900 py-4 transition-all duration-300;
+    @apply bg-[var(--nav-menu-bg)] py-4 transition-all duration-300;
 }
 
 .main-nav-wrapper.sticky {
@@ -340,11 +284,11 @@ social-link {
 }
 
 .logo-slogan {
-    @apply hidden lg:block text-sm text-gray-500 dark:text-gray-400;
+    @apply hidden lg:block text-sm text-gray-500;
 }
 
 .mobile-menu-button {
-    @apply md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors;
+    @apply md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors;
 }
 
 .nav-menu-wrapper {
@@ -352,7 +296,7 @@ social-link {
 }
 
 .nav-menu-wrapper.open {
-    @apply fixed md:relative top-0 right-0 bottom-0 left-0 bg-[#1a1a2e] dark:bg-gray-900 md:bg-transparent z-40 flex items-center justify-center md:flex;
+    @apply fixed md:relative top-0 right-0 bottom-0 left-0 bg-[var(--nav-menu-bg)] md:bg-transparent z-40 flex items-center justify-center md:flex;
 }
 
 .nav-menu {
@@ -364,7 +308,7 @@ social-link {
 }
 
 .nav-link {
-    @apply flex items-center gap-1 px-4 py-2 text-[#16213e] dark:text-gray-300 hover:text-[#e94560] dark:hover:text-white transition-colors text-sm font-medium;
+    @apply flex items-center gap-1 px-4 py-2 text-[var(--contact-link-color)] hover:text-[var(--contact-link-hover)] transition-colors text-sm font-medium;
 }
 
 .submenu-trigger {
@@ -376,7 +320,7 @@ social-link {
 }
 
 .submenu {
-    @apply hidden absolute top-full left-0 min-w-[200px] bg-[#1a1a2e] dark:bg-gray-800 shadow-lg rounded-md py-2 z-50;
+    @apply hidden absolute top-full left-0 min-w-[200px] bg-[var(--submenu-bg)] shadow-lg rounded-md py-2 z-50;
 }
 
 .submenu.open {
@@ -384,7 +328,11 @@ social-link {
 }
 
 .submenu li a {
-    @apply block px-4 py-2 text-sm text-[#16213e] dark:text-gray-300 hover:bg-[#e0e0e0] dark:hover:bg-gray-700 transition-colors;
+    @apply block px-4 py-2 text-sm text-[var(--contact-link-color)] hover:bg-[var(--submenu-link-hover-bg)] transition-colors;
+}
+
+.highlighted-text {
+    @apply inline-block px-4 py-2 bg-[var(--foreground)] text-[var(--background)] rounded-full;
 }
 
 @keyframes slidedown {
@@ -395,5 +343,23 @@ social-link {
     to {
         transform: translatey(0);
         opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav-wrapper {
+        @apply fixed top-0 left-0 right-0 bottom-0 bg-[var(--nav-menu-bg)] z-50 flex items-center justify-center;
+    }
+
+    .nav-menu {
+        @apply flex-col items-center gap-4;
+    }
+
+    .nav-link {
+        @apply text-lg;
+    }
+
+    .mobile-menu-button {
+        @apply fixed top-4 right-4 z-50;
     }
 }

@@ -15,7 +15,7 @@ import {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [openSubMenus, setOpenSubMenus] = useState<Record<string, boolean>>({});
+  const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,10 +42,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const toggleSubMenu = (key: string) => {
-    setOpenSubMenus((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
+    setOpenSubMenu((prev) => (prev === key ? null : key));
   };
 
   return (
@@ -102,7 +99,9 @@ const Navbar = () => {
                 />
               </Link>
               <span className="logo-slogan">
-                People&apos;s Movement for Sustainable Architecture
+                <div className="highlighted-text">
+                  People&apos;s Movement for Sustainable Architecture
+                </div>
               </span>
             </div>
 
@@ -127,13 +126,13 @@ const Navbar = () => {
                   <button
                     onClick={() => toggleSubMenu("about")}
                     className="nav-link submenu-trigger"
-                    aria-expanded={openSubMenus["about"]}
+                    aria-expanded={openSubMenu === "about"}
                   >
                     About Us
                     <ChevronDown size={16} />
                   </button>
                   <ul
-                    className={`submenu ${openSubMenus["about"] ? "open" : ""}`}
+                    className={`submenu ${openSubMenu === "about" ? "open" : ""}`}
                   >
                     <li>
                       <Link href="/shankar">Dr. G Shankar</Link>
@@ -163,13 +162,13 @@ const Navbar = () => {
                   <button
                     onClick={() => toggleSubMenu("projects")}
                     className="nav-link submenu-trigger"
-                    aria-expanded={openSubMenus["projects"]}
+                    aria-expanded={openSubMenu === "projects"}
                   >
                     Projects
                     <ChevronDown size={16} />
                   </button>
                   <ul
-                    className={`submenu ${openSubMenus["projects"] ? "open" : ""}`}
+                    className={`submenu ${openSubMenu === "projects" ? "open" : ""}`}
                   >
                     <li>
                       <Link href="/projects">Completed/Ongoing/Upcoming</Link>
