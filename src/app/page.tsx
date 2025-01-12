@@ -11,7 +11,7 @@ const slides = [
       "Dr. G Shankar is dedicated at evolving the most cost effective and eco friendly designs that can guarantee sustainability.",
     buttonText: "READ MORE",
     buttonLink: "shankar.html",
-    imageUrl: "slide1.jpg",
+    imageUrl: "slide1.webp",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const slides = [
     subtitle: "A design and blend uniquely made for the Indian masses.",
     buttonText: "READ MORE",
     buttonLink: "#",
-    imageUrl: "slide2.jpg",
+    imageUrl: "slide2.webp",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const slides = [
     subtitle: "An initiative to help every individual find a roof for himself.",
     buttonText: "READ MORE",
     buttonLink: "#",
-    imageUrl: "slide3.jpg",
+    imageUrl: "slide3.webp",
   },
 ];
 
@@ -35,7 +35,7 @@ const welcomeContent = {
   title: "Welcome",
   subtitle: "We are Habitat Technology Group",
   description: `Established in 1987 in Kerala, Habitat is registered as a charitable society. It is totally committed to the concept of green and humane architecture. It has been recognized as a nodal agency to carry out developmental works under the decentralization process in Kerala Habitat is the largest non-governmental organization in the shelter sector in India committed to sustainable building solutions.`,
-  imageUrls: ["pic1.jpg", "pic2.jpg", "pic3.jpg"], // Add your image URLs here
+  imageUrls: ["pic1.webp", "pic2.webp", "pic3.webp"], // Add your image URLs here
 };
 
 export default function Page() {
