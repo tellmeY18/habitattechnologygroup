@@ -1,0 +1,18 @@
+:root {
+    --background: #fff8e5;
+    --foreground: #333333;
+    --yellow: #d1b82a;
+    --text-primary: #333333;
+    --text-secondary: #000000;
+    --white: #ffffff;
+    --link-color: #1a73e8;
+    --link-hover: #d32f2f;
+    --hero-height: 600px;
+    --header-bg: #0f3460;
+    --top-bar-bg: #fff8e5;
+    --contact-link-color: #16213e;
+    --contact-link-hover: #e94560;
+    --nav-menu-bg: #fff8e5;
+    --submenu-bg: #fff8e5;
+    --submenu-link-hover-bg: #e0e0e0;
+}

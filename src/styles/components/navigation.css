@@ -1,0 +1,9 @@
+.nav-menu-wrapper {
+    @apply hidden md:block;
+}
+
+.nav-menu-wrapper.open {
+    @apply fixed md:relative top-0 right-0 bottom-0 left-0 bg-[var(--nav-menu-bg)] md:bg-transparent z-40 flex items-center justify-center md:flex;
+}
+
+/* Add other navigation-specific styles */

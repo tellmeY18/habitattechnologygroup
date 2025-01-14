@@ -1,0 +1,11 @@
+.container {
+    @apply mx-auto px-4;
+}
+
+.site-header {
+    @apply w-full bg-[var(--header-bg)];
+}
+
+.top-bar-wrapper {
+    @apply hidden md:block bg-[var(--top-bar-bg)] py-2;
+}

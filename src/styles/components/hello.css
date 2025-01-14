@@ -1,0 +1,9 @@
+.welcome-section {
+    @apply py-20;
+}
+
+.welcome-container {
+    @apply container;
+}
+
+/* Add other welcome-section-specific styles */

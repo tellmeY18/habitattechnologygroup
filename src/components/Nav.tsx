@@ -91,7 +91,7 @@ const Navbar = () => {
             <div className="logo-wrapper">
               <Link href="/" className="logo-link">
                 <Image
-                  src="logo-dark.png"
+                  src="logo-dark.webp"
                   width={171}
                   height={49}
                   alt="Habitat Technology Group"

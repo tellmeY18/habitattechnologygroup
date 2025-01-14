@@ -1,0 +1,13 @@
+.main-bar {
+    @apply flex items-center justify-between py-4 container;
+}
+
+.logo-header {
+    @apply flex items-center;
+}
+
+.extra-nav {
+    @apply flex items-center;
+}
+
+/* Add other header-specific styles */

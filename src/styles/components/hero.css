@@ -1,0 +1,8 @@
+.hero-wrapper {
+    @apply relative w-full h-[var(--hero-height)] bg-[var(--background)] overflow-hidden flex items-center justify-center;
+    margin-top: var(--header-height);
+}
+
+.hero-container {
+    @apply relative w-full h-full container mx-auto px-4;
+}
