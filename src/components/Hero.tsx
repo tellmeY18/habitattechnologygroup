@@ -84,10 +84,10 @@ const Hero: React.FC<HeroProps> = ({
                     <span className="text-yellow">School</span>
                     {slide.title.replace("School", "")}
                   </>
-                ) : slide.title.includes("People&apos;s") ? (
+                ) : slide.title.includes("People's") ? (
                   <>
                     <span className="text-yellow">People&apos;s</span>
-                    {slide.title.replace("People&apos;s", "")}
+                    {slide.title.replace("People's", "")}
                   </>
                 ) : (
                   slide.title
