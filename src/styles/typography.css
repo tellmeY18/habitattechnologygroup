@@ -1,9 +1,80 @@
+/* Typography for Titles */
 .hero-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-tight;
+    @apply text-6xl md:text-5xl lg:text-6xl font-black uppercase leading-tight;
     color: var(--text-primary);
 }
 
+.hero-title .text-yellow {
+    @apply text-[var(--yellow)];
+}
+
+.welcome-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+    color: var(--text-primary);
+}
+
+.recent-projects-title,
+.snippets-title {
+    @apply text-3xl font-bold mb-6;
+    color: var(--text-primary);
+}
+
+/* Typography for Subtitles */
 .hero-subtitle {
-    @apply text-lg leading-7 mt-4;
+    @apply text-lg md:text-xl mt-4 font-light leading-7;
     color: var(--white);
+}
+
+.welcome-subtitle {
+    @apply text-xl font-medium mt-3;
+    color: var(--text-secondary);
+}
+
+/* Typography for Paragraphs */
+.welcome-description {
+    @apply text-base md:text-lg mt-4 leading-relaxed;
+    color: var(--text-secondary);
+}
+
+.recent-projects-description,
+.snippets-description {
+    @apply text-sm md:text-base text-[var(--text-secondary)] leading-relaxed;
+}
+
+/* Typography for Buttons */
+.hero-button {
+    @apply inline-block px-8 py-3 text-lg font-medium text-black bg-white border border-white rounded-md
+         hover:bg-transparent hover:text-white transition-colors duration-300;
+}
+
+.hero-button-container {
+    @apply mt-6;
+}
+
+/* Typography for Navigation */
+.nav-link {
+    @apply text-sm md:text-base font-medium text-[var(--contact-link-color)]
+         hover:text-[var(--contact-link-hover)] transition-colors duration-300;
+}
+
+.submenu-link {
+    @apply block px-4 py-2 text-sm font-medium text-[var(--contact-link-color)]
+         hover:bg-[var(--submenu-link-hover-bg)] transition-colors;
+}
+
+.hero-nav-bullet {
+    @apply text-xs uppercase font-semibold;
+}
+
+/* General Utility Typography */
+.text-yellow {
+    @apply text-[var(--yellow)];
+}
+
+.text-primary {
+    @apply text-[var(--text-primary)];
+}
+
+.text-secondary {
+    @apply text-[var(--text-secondary)];
 }

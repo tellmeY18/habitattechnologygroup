@@ -79,6 +79,16 @@ const Hero: React.FC<HeroProps> = ({
                     <span className="text-yellow">Dr.</span>
                     {slide.title.slice(3)}
                   </>
+                ) : slide.title.includes("School") ? (
+                  <>
+                    <span className="text-yellow">School</span>
+                    {slide.title.replace("School", "")}
+                  </>
+                ) : slide.title.includes("People&apos;s") ? (
+                  <>
+                    <span className="text-yellow">People&apos;s</span>
+                    {slide.title.replace("People&apos;s", "")}
+                  </>
                 ) : (
                   slide.title
                 )}
@@ -92,7 +102,6 @@ const Hero: React.FC<HeroProps> = ({
             </div>
           </div>
         ))}
-
         {/* Navigation Bullets */}
         <div className="hero-nav">
           {slides.map((_, index) => (
@@ -106,7 +115,6 @@ const Hero: React.FC<HeroProps> = ({
             />
           ))}
         </div>
-
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}

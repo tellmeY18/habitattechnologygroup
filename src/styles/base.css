@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    font-family: "poppins", sans-serif;
+}
+
 body {
     color: var(--foreground);
     background: var(--background);
-    font-family: "poppins", sans-serif;
     font-size: 12px;
     font-weight: 400;
     padding: 0;

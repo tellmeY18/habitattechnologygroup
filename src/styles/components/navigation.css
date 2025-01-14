@@ -1,3 +1,6 @@
+.main-nav-wrapper {
+    @apply bg-[var(--background)];
+}
 .nav-menu-wrapper {
     @apply hidden md:block;
 }

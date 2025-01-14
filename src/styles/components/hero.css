@@ -16,15 +16,13 @@
 }
 
 .hero-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[var(--text-primary)];
-}
-
-.text-yellow {
-    @apply text-[var(--yellow)];
+    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-tight;
+    color: var(--text-primary);
 }
 
 .hero-subtitle {
-    @apply text-lg md:text-xl mt-4 text-[var(--white)];
+    @apply text-lg md:text-xl mt-4 font-light leading-7;
+    color: var(--white);
 }
 
 .hero-button-container {
@@ -32,7 +30,7 @@
 }
 
 .hero-button {
-    @apply inline-block px-8 py-3 text-black bg-white border border-white rounded-lg hover:bg-transparent hover:text-white transition-colors duration-300 font-medium;
+    @apply inline-block px-8 py-3 text-lg font-medium text-black bg-white border border-white rounded-md hover:bg-transparent hover:text-white transition-colors duration-300;
 }
 
 .hero-nav {
