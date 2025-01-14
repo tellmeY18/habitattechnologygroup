@@ -1,8 +1,75 @@
 .hero-wrapper {
     @apply relative w-full h-[var(--hero-height)] bg-[var(--background)] overflow-hidden flex items-center justify-center;
-    margin-top: var(--header-height);
+    margin-top: calc(var(--header-height) + 1rem);
 }
 
 .hero-container {
-    @apply relative w-full h-full container mx-auto px-4;
+    @apply relative w-full h-full px-4;
+}
+
+.hero-slide {
+    @apply absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-500 ease-in-out;
+}
+
+.hero-text-container {
+    @apply absolute bottom-10 left-10 md:left-20 max-w-[400px] text-left z-20;
+}
+
+.hero-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[var(--text-primary)];
+}
+
+.text-yellow {
+    @apply text-[var(--yellow)];
+}
+
+.hero-subtitle {
+    @apply text-lg md:text-xl mt-4 text-[var(--white)];
+}
+
+.hero-button-container {
+    @apply mt-6;
+}
+
+.hero-button {
+    @apply inline-block px-8 py-3 text-black bg-white border border-white rounded-lg hover:bg-transparent hover:text-white transition-colors duration-300 font-medium;
+}
+
+.hero-nav {
+    @apply absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4 z-20;
+}
+
+.hero-nav-bullet {
+    @apply w-4 h-4 rounded-full bg-white/50 cursor-pointer transition-colors duration-300;
+}
+
+.hero-nav-bullet.active {
+    @apply bg-white;
+}
+
+.hero-nav-arrow {
+    @apply absolute top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer;
+}
+
+.hero-nav-arrow.left {
+    @apply left-6;
+}
+
+.hero-nav-arrow.right {
+    @apply right-6;
+}
+
+@media (max-width: 768px) {
+    .hero-text-container {
+        @apply left-6 max-w-full text-center;
+    }
+    .hero-title {
+        @apply text-3xl;
+    }
+    .hero-subtitle {
+        @apply text-base;
+    }
+    .hero-button {
+        @apply px-6 py-2 text-sm;
+    }
 }

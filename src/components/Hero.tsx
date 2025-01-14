@@ -24,11 +24,15 @@ const Hero: React.FC<HeroProps> = ({
 
   // Auto-play functionality
   useEffect(() => {
-    if (slides.length > 1) {
-      timerRef.current = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-      }, autoPlayInterval);
-    }
+    const startAutoPlay = () => {
+      if (slides.length > 1) {
+        timerRef.current = setInterval(() => {
+          setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, autoPlayInterval);
+      }
+    };
+
+    startAutoPlay();
 
     return () => {
       if (timerRef.current) {
@@ -49,26 +53,24 @@ const Hero: React.FC<HeroProps> = ({
     }
   };
 
-  const nextSlide = () => {
-    goToSlide((currentSlide + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
+  const nextSlide = () => goToSlide((currentSlide + 1) % slides.length);
+  const prevSlide = () =>
     goToSlide((currentSlide - 1 + slides.length) % slides.length);
-  };
 
   return (
     <div className="hero-wrapper">
       <div className="hero-container">
+        {/* Slides */}
         {slides.map((slide, index) => (
           <div
             key={slide.id}
             className={`hero-slide ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
+              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
             style={{
               backgroundImage: `url(${slide.imageUrl})`,
             }}
+            aria-hidden={index !== currentSlide}
           >
             <div className="hero-text-container">
               <h1 className="hero-title">
