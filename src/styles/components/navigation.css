@@ -1,5 +1,5 @@
 .main-nav-wrapper {
-    @apply bg-[var(--background)];
+    @apply bg-[var(--background)] fixed top-0 left-0 right-0 z-50;
 }
 .nav-menu-wrapper {
     @apply hidden md:block;

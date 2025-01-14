@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "@/components/Hero";
-import Image from "next/image";
 import Navbar from "@/components/Nav";
+import Welcome from "@/components/Welcome";
 
 const slides = [
   {
@@ -32,44 +32,25 @@ const slides = [
 ];
 
 const welcomeContent = {
-  title: "Welcome",
-  subtitle: "We are Habitat Technology Group",
-  description: `Established in 1987 in Kerala, Habitat is registered as a charitable society. It is totally committed to the concept of green and humane architecture. It has been recognized as a nodal agency to carry out developmental works under the decentralization process in Kerala Habitat is the largest non-governmental organization in the shelter sector in India committed to sustainable building solutions.`,
-  imageUrls: ["pic1.webp", "pic2.webp", "pic3.webp"], // Add your image URLs here
+  title: "We are Habitat Technology Group",
+  subtitle: "Established in 1987 in Kerala",
+  description:
+    "Habitat is registered as a charitable society. It is totally committed to the concept of green and humane architecture. It has been recognized as a nodal agency to carry out developmental works under the decentralization process in Kerala. Habitat is the largest non-governmental organization in the shelter sector in India committed to sustainable building solutions.",
+  imageUrls: ["/pic1.webp", "/pic2.webp", "/pic3.webp"],
 };
 
 export default function Page() {
   return (
     <main className="pb-24">
-      <Navbar /> {/* Adding the Navbar */}
+      <Navbar />
       <Hero slides={slides} autoPlayInterval={5000} />
       <div className="flex flex-col pt-20 container mx-auto px-4 max-w-6xl">
-        <section id="welcome" className="welcome-section">
-          <div className="welcome-container">
-            <div className="welcome-card">
-              <div className="welcome-content">
-                <h1 className="welcome-title">{welcomeContent.title}</h1>
-                <h2 className="welcome-subtitle">{welcomeContent.subtitle}</h2>
-                <p className="welcome-description">
-                  {welcomeContent.description}
-                </p>
-                <div className="image-slideshow">
-                  {welcomeContent.imageUrls.map((url, index) => (
-                    <Image
-                      key={index}
-                      src={url}
-                      alt={`Slideshow image ${index + 1}`}
-                      width={300}
-                      height={200}
-                      className="slideshow-image"
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <Welcome
+          title={welcomeContent.title}
+          subtitle={welcomeContent.subtitle}
+          description={welcomeContent.description}
+          imageUrls={welcomeContent.imageUrls}
+        />
         <section id="recent-projects" className="recent-projects-section">
           <div className="recent-projects-container">
             <div className="container mx-auto px-4">
