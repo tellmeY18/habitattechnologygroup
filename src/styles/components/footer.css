@@ -1,0 +1,47 @@
+.site-footer {
+    display: block;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--foreground);
+}
+
+.footer-bottom {
+    position: relative;
+}
+
+.overlay-wraper .overlay-main {
+    background: black;
+    opacity: 0;
+}
+
+.container {
+    padding-top: 30px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.copyright-block {
+    padding-top: 15px;
+}
+
+.copyrights-text {
+    color: #fff;
+    font-size: 14px;
+}
+
+#particles-dark.particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.particles-js-canvas-el {
+    width: 100%;
+    height: 100%;
+}

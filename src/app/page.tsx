@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Nav";
 import Welcome from "@/components/Welcome";
+import Footer from "@/components/Footer";
 
 const slides = [
   {
@@ -51,26 +52,8 @@ export default function Page() {
           description={welcomeContent.description}
           imageUrls={welcomeContent.imageUrls}
         />
-        <section id="recent-projects" className="recent-projects-section">
-          <div className="recent-projects-container">
-            <div className="container mx-auto px-4">
-              <h2 className="recent-projects-title">Recent Projects</h2>
-              <div className="recent-projects-grid">
-                {/* Add recent projects here */}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="snippets" className="snippets-section">
-          <div className="snippets-container">
-            <div className="container mx-auto px-4">
-              <h2 className="snippets-title">Snippets</h2>
-              <div className="snippets-grid">{/* Add snippets here */}</div>
-            </div>
-          </div>
-        </section>
       </div>
+      <Footer />
     </main>
   );
 }
