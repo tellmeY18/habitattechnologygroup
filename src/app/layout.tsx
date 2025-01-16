@@ -12,7 +12,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// For Cloudflare Pages
+const baseUrl =
+  process.env.CF_PAGES_URL ||
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  "https://habitattechnologygroup.pages.dev"; // Replace with your actual domain
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: "Habitat Technology Group",
   description: "People's Movement for Sustainable Architecture",
   openGraph: {
