@@ -49,7 +49,7 @@ const Welcome: React.FC<WelcomeProps> = ({
               alt="Welcome image"
               width={500}
               height={300}
-              className="welcome-image rounded-lg shadow-lg"
+              className="welcome-image rounded-lg shadow-lg transition-opacity duration-1000 ease-in-out"
             />
           </div>
         </div>
